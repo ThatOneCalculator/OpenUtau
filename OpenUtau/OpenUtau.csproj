@@ -17,7 +17,7 @@
     <CFBundlePackageType>APPL</CFBundlePackageType>
     <CFBundleSignature>????</CFBundleSignature>
     <CFBundleExecutable>OpenUtau</CFBundleExecutable>
-    <CFBundleIconFile>Assets\open-utau.ico</CFBundleIconFile>
+    <CFBundleIconFile>OpenUtau.icns</CFBundleIconFile>
     <NSPrincipalClass>NSApplication</NSPrincipalClass>
     <NSHighResolutionCapable>true</NSHighResolutionCapable>
   </PropertyGroup>
@@ -46,8 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\libs\**" CopyToOutputDirectory="PreserveNewest" LinkBase="libs\" />
+    <None Include="Assets\OpenUtau.icns" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="(if not exist $(OutDir)Plugins mkdir $(OutDir)Plugins) &amp;&amp; (copy /y $(OutDir)OpenUtau.Plugin.Builtin.dll $(OutDir)Plugins\)" />
-  </Target>
 </Project>
