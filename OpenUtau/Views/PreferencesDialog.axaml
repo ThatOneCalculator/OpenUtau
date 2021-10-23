@@ -56,15 +56,7 @@
             <TextBlock TextWrapping="Wrap" Text="{DynamicResource prefs.note.restart}"/>
           </StackPanel>
         </HeaderedContentControl>
-        <HeaderedContentControl Classes="groupbox" Header="{DynamicResource prefs.advanced}">
-          <StackPanel>
-            <TextBlock Text="{DynamicResource prefs.advanced.beta}" />
-            <ComboBox HorizontalAlignment="Stretch" SelectedIndex="{Binding Beta}">
-              <ComboBoxItem Content="{DynamicResource prefs.advanced.stable}"/>
-              <ComboBoxItem Content="{DynamicResource prefs.advanced.beta}"/>
-            </ComboBox>
-            <TextBlock TextWrapping="Wrap" Text="{DynamicResource prefs.note.restart}"/>
-          </StackPanel>
+        <HeaderedContentControl Classes="groupbox" Header="{DynamicResource prefs.advanced}" IsVisible="False">
         </HeaderedContentControl>
       </StackPanel>
     </ScrollViewer>

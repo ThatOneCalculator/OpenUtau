@@ -37,7 +37,6 @@ namespace OpenUtau.App.ViewModels {
             set => this.RaiseAndSetIfChanged(ref exportResampler, value);
         }
         [Reactive] public int Theme { get; set; }
-        [Reactive] public int Beta { get; set; }
         public List<CultureInfo?>? Languages { get; }
         public CultureInfo? Language {
             get => language;
@@ -98,7 +97,6 @@ namespace OpenUtau.App.ViewModels {
                 ? null
                 : CultureInfo.GetCultureInfo(Preferences.Default.Language);
             Theme = Preferences.Default.Theme;
-            Beta = Preferences.Default.Beta;
 
             this.WhenAnyValue(vm => vm.AudioOutputDevice)
                 .WhereNotNull()
@@ -145,11 +143,6 @@ namespace OpenUtau.App.ViewModels {
                     Preferences.Default.Theme = theme;
                     Preferences.Save();
                     App.SetTheme();
-                });
-            this.WhenAnyValue(vm => vm.Beta)
-                .Subscribe(beta => {
-                    Preferences.Default.Beta = beta;
-                    Preferences.Save();
                 });
         }
 
